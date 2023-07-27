@@ -12,37 +12,34 @@ export class Match {
     constructor(home: string, away: string) {
         this.home = home;
         this.away = away;
+        matches.add(this);
     }
     public update(scoreHome: number, scoreAway: number) {
         // Update score of a match
+        this.scoreHome = scoreHome;
+        this.scoreAway = scoreAway;
     }
-    public finish() {     
+    public finish() {
         // Remove the match from collection
+        matches.delete(this);
     }
     static summary() {
-        // Get all matches sorted by a sum of scores/most recent 
-        return [
-            {
-                home: { country: "Uruguay", goals: 6 },
-                away: { country: "Italy", goals: 6 }
-            },
-            {
-                home: { country: "Spain", goals: 10 },
-                away: { country: "Brazil", goals: 2 }
-            },
-            {
-                home: { country: "Mexico", goals: 0 },
-                away: { country: "Canada", goals: 5 }
-            },
-            {
-                home: { country: "Argentina", goals: 3 },
-                away: { country: "Australia", goals: 1 }
-            },
-            {
-                home: { country: "Germany", goals: 2 },
-                away: { country: "France", goals: 2 }
-            }
-        ];
+        // Get all matches sorted by a sum of scores/most recent
+        return Array.from(matches)
+            .map(
+                (match): Score => {
+                    return {
+                        home: { country: match.home, goals: match.scoreHome },
+                        away: { country: match.away, goals: match.scoreAway }
+                    };
+                }
+            )
+            .sort((a: Score, b: Score): number => {
+                const sum: number =
+                    b.home.goals + b.away.goals - a.home.goals - a.away.goals;
+                if (sum === 0) return -1;
+                return sum;
+            });
     }
 }
 

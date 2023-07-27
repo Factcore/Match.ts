@@ -47,8 +47,8 @@ test("Sorting matches in total score/recently started", () => {
     ]);
 });
 
-test.skip("Finishing the match", () => {
-    // skip this test because .summary method returns only static dummy data
+test("Finishing the match", () => {
+    
     matchTwo.finish();
 
     expect(Match.summary()).not.toContainEqual({
