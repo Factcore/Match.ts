@@ -1,0 +1,26 @@
+{
+  "name": "match",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Match.ts",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Factcore/Match.ts.git"
+  },
+  "keywords": [
+    "test",
+    "TDD",
+    "matches"
+  ],
+  "author": "Dzianis Pimenau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Factcore/Matches.ts/issues"
+  },
+  "homepage": "https://github.com/Factcore/Match.ts#readme",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
