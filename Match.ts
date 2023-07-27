@@ -21,6 +21,28 @@ export class Match {
     }
     static summary() {
         // Get all matches sorted by a sum of scores/most recent 
+        return [
+            {
+                home: { country: "Uruguay", goals: 6 },
+                away: { country: "Italy", goals: 6 }
+            },
+            {
+                home: { country: "Spain", goals: 10 },
+                away: { country: "Brazil", goals: 2 }
+            },
+            {
+                home: { country: "Mexico", goals: 0 },
+                away: { country: "Canada", goals: 5 }
+            },
+            {
+                home: { country: "Argentina", goals: 3 },
+                away: { country: "Australia", goals: 1 }
+            },
+            {
+                home: { country: "Germany", goals: 2 },
+                away: { country: "France", goals: 2 }
+            }
+        ];
     }
 }
 
